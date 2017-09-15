@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Weather",
+    "version": "1.0",
+    "description": "Show your location Weather",
+    "icons": {
+        "16": "images/weather-icon-16.png",
+        "32": "images/weather-icon-32.png",
+        "64": "images/weather-icon-64.png",
+        "128": "images/weather-icon-128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "32": "images/weather-icon-32.png"
+        },
+        "default_title": "Weather",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "persistent": false,
+        "scripts": ["background.js"]
+    },
+    "permissions": [
+        "http://api.openweathermap.org/*",
+        "https://geoip-db.com/json/",
+        "storage"
+    ]
+}

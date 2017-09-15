@@ -1,0 +1,6 @@
+{
+  "browser": true,
+  "strict": true,
+  "esnext": true,
+  "indent": 2
+}
