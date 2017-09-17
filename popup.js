@@ -1,4 +1,19 @@
 "use strict";
+
+let translate = {
+  weather: function(weather) {
+    switch (weather.toLowerCase()) {
+      case 'clear': {
+        return '晴';
+        break;
+      }
+      default:
+        // statements_def
+        break;
+    }
+  }
+};
+
 let parseWeather = function(data = {}) {
   header: {
     // console.log(data);
@@ -16,9 +31,9 @@ let parseWeather = function(data = {}) {
         <span class="row wind">风速</span>
       </aside>
       <aside class="aside aside-2">
-        <span class="row weather-detail" id="weather-detail">${data.weather[0].main}</span>
-        <span class="row temperature-detail" id="temperature-detail">${data.main.temp}</span>
-        <span class="row humidity-detail" id="humidity-detail">${data.main.humidity}</span>
+        <span class="row weather-detail" id="weather-detail">${translate.weather(data.weather[0].main)}</span>
+        <span class="row temperature-detail" id="temperature-detail">${data.main.temp - 273.15}°C</span>
+        <span class="row humidity-detail" id="humidity-detail">${data.main.humidity}%</span>
         <span class="row wind-detail" id="wind-detail">${data.wind.speed}</span>
       </aside>
       <footer class="footer">
