@@ -5,11 +5,13 @@ let translate = {
     switch (weather.toLowerCase()) {
       case 'clear': {
         return '晴';
-        break;
       }
-      default:
-        // statements_def
-        break;
+      case 'clouds': {
+        return '多云';
+      }
+      default: {
+        return weather;
+      }
     }
   }
 };
@@ -46,5 +48,6 @@ let parseWeather = function(data = {}) {
 chrome.runtime.sendMessage({
   sendMessage: "Get weather data"
 }, function(response) {
+  console.log(response)
   parseWeather(response)
 });
